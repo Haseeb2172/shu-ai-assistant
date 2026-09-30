@@ -1,1 +1,26 @@
-
+name: Plugin checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  lint-and-smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.2', '8.4']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: openssl
+          coverage: none
+          tools: none
+      - name: PHP syntax
+        run: find . -type f -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Domain smoke checks
+        run: php tests/smoke.php
+      - name: Widget syntax
+        run: node --check assets/js/chat-widget.js
