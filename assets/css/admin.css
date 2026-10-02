@@ -1,0 +1,68 @@
+/* SHU AI Assistant admin styles. */
+
+.shu-admin-wrap h1 { display: flex; align-items: center; gap: 10px; }
+.shu-badge-version { background: #111214; color: #FFFFFF; font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: 500; }
+
+/* Grid Layout for General Settings */
+.shu-settings-grid { display: flex; gap: 24px; margin-top: 15px; }
+.shu-settings-main { flex: 1; min-width: 0; }
+.shu-settings-sidebar { width: 340px; flex-shrink: 0; }
+
+.shu-preview-box { background: #FFFFFF; border: 1px solid #CCD0D4; border-radius: 8px; padding: 16px; position: sticky; top: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.shu-preview-box h3 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: #50575E; }
+.shu-preview-trigger { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; margin-bottom: 12px; }
+
+.shu-preview-widget { border: 1px solid #E2E8F0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; display: flex; flex-direction: column; height: 360px; background: #FFFFFF; transition: all 0.2s ease; }
+.shu-preview-header { padding: 12px 14px; }
+.shu-preview-title { font-weight: 600; font-size: 14px; }
+.shu-preview-subtitle { font-size: 11px; opacity: 0.8; margin-top: 2px; }
+
+.shu-preview-body { flex: 1; padding: 12px; background: #FAFAFA; display: flex; flex-direction: column; gap: 10px; font-size: 12px; overflow: hidden; }
+.shu-preview-msg { padding: 8px 12px; line-height: 1.4; max-width: 85%; }
+.shu-preview-msg.bot { align-self: flex-start; }
+.shu-preview-msg.user { align-self: flex-end; }
+
+.shu-preview-footer { padding: 8px 12px; border-top: 1px solid #E2E8F0; display: flex; gap: 6px; }
+.shu-preview-input { flex: 1; border: 1px solid #CBD5E1; border-radius: 6px; padding: 6px 10px; font-size: 11px; }
+.shu-preview-send { background: #111214; color: #FFF; border: none; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; }
+
+/* Priority Badges */
+.shu-priority-badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-align: center; }
+.shu-badge-hot { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+.shu-badge-warm { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
+.shu-badge-cold { background: #F3F4F6; color: #4B5563; border: 1px solid #E5E7EB; }
+
+/* Analytics Dashboard Cards */
+.shu-metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.shu-metric-card { background: #FFFFFF; border: 1px solid #CCD0D4; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.shu-metric-label { font-size: 12px; font-weight: 600; color: #64748B; text-transform: uppercase; }
+.shu-metric-val { font-size: 28px; font-weight: 700; color: #0F172A; margin: 4px 0; }
+.shu-metric-sub { font-size: 11px; color: #94A3B8; }
+
+.shu-analytics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.shu-analytics-card { background: #FFFFFF; border: 1px solid #CCD0D4; border-radius: 8px; padding: 16px; }
+
+.shu-badge-count { background: #E0E7FF; color: #3730A3; padding: 2px 6px; border-radius: 10px; font-weight: 600; font-size: 11px; }
+.shu-badge-gap { background: #FEE2E2; color: #991B1B; padding: 2px 6px; border-radius: 10px; font-weight: 600; font-size: 11px; }
+
+/* Modal Overlay for Transcript Viewer */
+.shu-modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15,23,42,0.6); backdrop-filter: blur(2px); display: none; align-items: center; justify-content: center; z-index: 999999; }
+.shu-modal-content { background: #FFFFFF; border-radius: 12px; width: 600px; max-width: 90vw; max-height: 85vh; padding: 24px; position: relative; display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.shu-modal-close { position: absolute; top: 16px; right: 16px; font-size: 24px; border: none; background: none; cursor: pointer; color: #64748B; }
+
+.shu-chat-transcript-view { overflow-y: auto; max-height: 50vh; display: flex; flex-direction: column; gap: 12px; margin-top: 15px; padding-right: 6px; }
+.shu-modal-turn { max-width: 80%; display: flex; flex-direction: column; }
+.shu-modal-turn.visitor { align-self: flex-end; }
+.shu-modal-turn.assistant { align-self: flex-start; }
+.shu-turn-sender { font-size: 11px; color: #64748B; margin-bottom: 3px; font-weight: 600; }
+.shu-modal-turn.visitor .shu-turn-sender { text-align: right; }
+.shu-turn-bubble { padding: 10px 14px; border-radius: 8px; font-size: 13px; line-height: 1.45; }
+.shu-turn-bubble { white-space: pre-wrap; overflow-wrap: anywhere; }
+.shu-modal-turn.visitor .shu-turn-bubble { background: #111214; color: #FFF; border-bottom-right-radius: 2px; }
+.shu-modal-turn.assistant .shu-turn-bubble { background: #F1F5F9; color: #0F172A; border-bottom-left-radius: 2px; }
+
+.shu-extra-details { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 8px 10px; border-radius: 6px; font-size: 12px; margin-top: 4px; }
+.shu-conversation-detail { background: #fff; border: 1px solid #c3c4c7; border-radius: 8px; padding: 16px; margin: 16px 0 24px; max-width: 780px; }
+.shu-conversation-detail .shu-chat-transcript-view { max-height: 60vh; padding: 8px; }
+.shu-pagination { display: flex; flex-wrap: wrap; gap: 4px; }
+@media (max-width: 1100px) { .shu-settings-grid { flex-direction: column; } .shu-settings-sidebar { width: min(100%, 380px); } .shu-preview-box { position: static; } .shu-analytics-grid { grid-template-columns: 1fr; } }
